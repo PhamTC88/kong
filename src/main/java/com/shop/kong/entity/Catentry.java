@@ -1,8 +1,6 @@
 package com.shop.kong.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,16 +9,14 @@ import java.util.List;
 import java.util.UUID;
 
 @Data
-@Builder
-@AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "Catalog")
-public class Catalog implements Serializable {
+@Table(name = "Catentry")
+public class Catentry implements Serializable {
     @Id
-    @Column(name = "catalog_id")
+    @Column(name = "catentry_id")
     @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID catalogId;
+    private UUID catentryId;
 
     @Column(name = "name")
     private String name;
@@ -28,6 +24,10 @@ public class Catalog implements Serializable {
     @Column(name = "description")
     private String description;
 
-    @OneToMany(mappedBy = "catalog")
-    private List<Catentry> catentries;
+    @ManyToOne
+    @JoinColumn(name = "catalog_id", nullable = false)
+    private Catalog catalog;
+
+    @OneToMany(mappedBy = "catentry")
+    private List<Product> products;
 }
