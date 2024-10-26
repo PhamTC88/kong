@@ -1,0 +1,16 @@
+server:
+  port: 9001
+spring:
+  application:
+    name: kong
+  datasource:
+    url: jdbc:postgresql://localhost:5432/postgres
+    password: password123
+    username: user
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
