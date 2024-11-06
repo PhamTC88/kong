@@ -17,3 +17,6 @@ spring:
   kafka:
     bootstrap-servers: localhost:9092
     group-id: kong
+  messages:
+    basename: messages
+    encoding: UTF-8
