@@ -20,3 +20,9 @@ spring:
   messages:
     basename: messages
     encoding: UTF-8
+aruba:
+  websocket:
+    url: wss://app-eucentral2.central.arubanetworks.com/streaming/api
+    key: eyJhbGciOiJIUzI1NiIsInR5cGUiOiJqd3QifQ.eyJjdXN0b21lcl9pZCI6IjhhOTJkZjhhNjljMzExZWY4OWQyY2E1MDVlMGI3YzcxIiwiY3JlYXRpb25fZGF0ZSI6MTczMDI4NDk2OH0.44D0F3bsPCzU2XdT9so5D4BgLRCAX30GwThlcq-xDGs
+    username: dzung.do-ext@pryvaxy.com
+    topic: location

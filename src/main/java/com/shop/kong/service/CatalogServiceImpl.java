@@ -1,17 +1,22 @@
 package com.shop.kong.service;
 
+import com.google.protobuf.InvalidProtocolBufferException;
 import com.shop.kong.constant.I18n;
 import com.shop.kong.entity.Catalog;
+import com.shop.kong.entity.Message.mac_address;
 import com.shop.kong.repositories.CatalogRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.i18n.LocaleContextHolder;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
 @Service
+@Slf4j
 public class CatalogServiceImpl implements CatalogService {
 
     @Autowired
@@ -34,5 +39,14 @@ public class CatalogServiceImpl implements CatalogService {
         System.out.println(message);
 
         return listCatalogs;
+    }
+
+    @Override
+    public mac_address getMacAddress(byte[] input) throws InvalidProtocolBufferException {
+        mac_address response = mac_address.parseFrom(input);
+
+        log.info(response.toString());
+
+        return response;
     }
 }
