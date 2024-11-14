@@ -2,6 +2,7 @@ package com.shop.kong;
 
 import com.google.protobuf.ByteString;
 import com.google.protobuf.InvalidProtocolBufferException;
+import com.shop.kong.entity.Message;
 import com.shop.kong.entity.Message.mac_address;
 import com.shop.kong.service.CatalogService;
 import lombok.extern.slf4j.Slf4j;

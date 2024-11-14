@@ -3,7 +3,7 @@ package com.shop.kong.service;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.shop.kong.constant.I18n;
 import com.shop.kong.entity.Catalog;
-import com.shop.kong.entity.Message.mac_address;
+import com.shop.kong.entity.Message.*;
 import com.shop.kong.repositories.CatalogRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,6 +44,15 @@ public class CatalogServiceImpl implements CatalogService {
     @Override
     public mac_address getMacAddress(byte[] input) throws InvalidProtocolBufferException {
         mac_address response = mac_address.parseFrom(input);
+
+        log.info(response.toString());
+
+        return response;
+    }
+
+    @Override
+    public stream_location getStreamLocation(byte[] input) throws InvalidProtocolBufferException {
+        stream_location response = stream_location.parseFrom(input);
 
         log.info(response.toString());
 

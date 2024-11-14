@@ -35,6 +35,11 @@ public class WebSocketService {
             headers.put("Authorization", websocketKey);
             headers.put("UserName", websocketUsername);
             headers.put("Topic", websocketTopic);
+            headers.put("sockopt", "[]");
+            headers.put("sslopt", "{}");
+            headers.put("fire_cont_frame", "False");
+            headers.put("enable_multithread", "True");
+            headers.put("skip_utf8_validation", "False");
 
             System.out.println("URI: " + uri);
             System.out.println("Headers: " + headers);

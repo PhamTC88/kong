@@ -5,8 +5,11 @@ import org.java_websocket.handshake.ServerHandshake;
 
 import java.net.URI;
 import java.util.Map;
+import java.util.concurrent.ScheduledExecutorService;
 
 public class ArubaWebSocketClient extends WebSocketClient {
+
+    private ScheduledExecutorService scheduler;
 
     public ArubaWebSocketClient(URI serverUri, Map<String, String> headers) {
         super(serverUri, headers);
